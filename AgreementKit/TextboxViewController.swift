@@ -8,12 +8,7 @@
 
 import UIKit
 
-
-typealias Callback = () -> ()
-
-extension Selector {
-    
-}
+extension Selector { }
 
 public class TextboxViewController: AgreementViewController {
     
@@ -27,7 +22,7 @@ public class TextboxViewController: AgreementViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = agreement.title
+        self.title = agreementToPresent.title
         
         // Have this be a smaller form style
         self.modalPresentationStyle = .formSheet
@@ -39,7 +34,7 @@ public class TextboxViewController: AgreementViewController {
         view.addConstraintsWithFormat("V:|-[v0]-|", views: textView)
         view.addConstraintsWithFormat("H:|-[v0]-|", views: textView)
         
-        if let message = agreement.message {
+        if let message = agreementToPresent.message {
             
             textView.attributedText = NSAttributedString(string: message, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 15.0), NSForegroundColorAttributeName: UIColor.black])
         }

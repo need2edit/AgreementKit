@@ -65,9 +65,14 @@ class ViewController: UIViewController, SegueHandlerType {
 
 extension ViewController: AgreementProvider {
     
-    var agreementToPresent: Agreement {
-        let body = "This is a sample agreement."
+    var agreementToPresent: Agreement! {
+        let body = "This is a sample primary agreement."
         return Agreement(title: "Terms & Conditions", message: body, style: agreementStyle)
+    }
+    
+    var affirmativeConsentAgreement: Agreement? {
+        let body = "This is a secondary agreement that you're requiring because you really want people to be sure."
+        return Agreement(title: "Are you sure you're sure?", message: body)
     }
     
 }

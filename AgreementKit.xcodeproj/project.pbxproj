@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		322092E81E1589AE00C8115A /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322092E71E1589AE00C8115A /* AgreementViewController.xib */; };
 		325B00581E14625D00383FB2 /* AgreementKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325B004E1E14625D00383FB2 /* AgreementKit.framework */; };
 		325B005D1E14625D00383FB2 /* AgreementKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B005C1E14625D00383FB2 /* AgreementKitTests.swift */; };
 		325B005F1E14625D00383FB2 /* AgreementKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 325B00511E14625D00383FB2 /* AgreementKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,9 +24,7 @@
 		325B008D1E14769F00383FB2 /* MultiPartAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B008C1E14769F00383FB2 /* MultiPartAgreementViewController.swift */; };
 		325B00921E1478E000383FB2 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B00911E1478E000383FB2 /* Constraints.swift */; };
 		325B00981E147BFA00383FB2 /* TextboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B00961E147BFA00383FB2 /* TextboxViewController.swift */; };
-		325B00991E147BFA00383FB2 /* TextboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325B00971E147BFA00383FB2 /* TextboxViewController.xib */; };
 		325B009B1E1490FC00383FB2 /* RegisterCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B009A1E1490FC00383FB2 /* RegisterCellHelpers.swift */; };
-		325B009D1E14923600383FB2 /* MultiPartAgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325B009C1E14923600383FB2 /* MultiPartAgreementViewController.xib */; };
 		325B009F1E14938000383FB2 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B009E1E14938000383FB2 /* AgreementViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		322092E71E1589AE00C8115A /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		325B004E1E14625D00383FB2 /* AgreementKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AgreementKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		325B00511E14625D00383FB2 /* AgreementKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgreementKit.h; sourceTree = "<group>"; };
 		325B00521E14625D00383FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,9 +80,7 @@
 		325B008C1E14769F00383FB2 /* MultiPartAgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPartAgreementViewController.swift; sourceTree = "<group>"; };
 		325B00911E1478E000383FB2 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		325B00961E147BFA00383FB2 /* TextboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextboxViewController.swift; sourceTree = "<group>"; };
-		325B00971E147BFA00383FB2 /* TextboxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextboxViewController.xib; sourceTree = "<group>"; };
 		325B009A1E1490FC00383FB2 /* RegisterCellHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCellHelpers.swift; sourceTree = "<group>"; };
-		325B009C1E14923600383FB2 /* MultiPartAgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiPartAgreementViewController.xib; sourceTree = "<group>"; };
 		325B009E1E14938000383FB2 /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,10 +170,9 @@
 			isa = PBXGroup;
 			children = (
 				325B009E1E14938000383FB2 /* AgreementViewController.swift */,
+				322092E71E1589AE00C8115A /* AgreementViewController.xib */,
 				325B008C1E14769F00383FB2 /* MultiPartAgreementViewController.swift */,
-				325B009C1E14923600383FB2 /* MultiPartAgreementViewController.xib */,
 				325B00961E147BFA00383FB2 /* TextboxViewController.swift */,
-				325B00971E147BFA00383FB2 /* TextboxViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -312,8 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				325B009D1E14923600383FB2 /* MultiPartAgreementViewController.xib in Resources */,
-				325B00991E147BFA00383FB2 /* TextboxViewController.xib in Resources */,
+				322092E81E1589AE00C8115A /* AgreementViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +613,7 @@
 				325B00641E14625D00383FB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		325B00651E14625D00383FB2 /* Build configuration list for PBXNativeTarget "AgreementKitTests" */ = {
 			isa = XCConfigurationList;
@@ -625,6 +622,7 @@
 				325B00671E14625D00383FB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		325B007B1E14627E00383FB2 /* Build configuration list for PBXNativeTarget "DemoAppiOS" */ = {
 			isa = XCConfigurationList;
@@ -633,6 +631,7 @@
 				325B007D1E14627E00383FB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

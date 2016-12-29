@@ -9,29 +9,55 @@
 import UIKit
 import MessageUI
 
-protocol AgreementViewManager {
-    
-    var agreement: Agreement! { get set }
+public typealias Callback = () -> ()
+
+public protocol AgreementViewManager: AgreementProvider {
     var continueCallback: Callback? { get set }
     var cancelCallback: Callback? { get set }
 }
 
 public class AgreementViewController: UIViewController, AgreementViewManager {
     
-    var agreement: Agreement!
-    var continueCallback: Callback?
-    var cancelCallback: Callback?
+    convenience init(agreementProvider provider: AgreementProvider, continueCallback: Callback?, cancelCallback: Callback?) {
+        self.init(
+            agreement: provider.agreementToPresent,
+            affirmativeAgreement: provider.affirmativeConsentAgreement,
+            continueCallback: continueCallback,
+            cancelCallback: cancelCallback
+        )
+    }
+    
+    public init(agreement: Agreement, affirmativeAgreement: Agreement? = nil, continueCallback: Callback?, cancelCallback: Callback?) {
+        
+        let bundle = Bundle(for: AgreementViewController.self)
+        super.init(nibName: "AgreementViewController", bundle: bundle)
+        
+        self.agreementToPresent = agreement
+        self.affirmativeConsentAgreement = affirmativeAgreement
+        self.continueCallback = continueCallback
+        self.cancelCallback = cancelCallback
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    public var agreementToPresent: Agreement!
+    public var affirmativeConsentAgreement: Agreement?
+    
+    public var continueCallback: Callback?
+    public var cancelCallback: Callback?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.title = agreement.title
+        self.title = agreementToPresent.title
         
         setupNavigation()
     }
     
     func askForAffirmativeConsent(andContinue continueCallback: @escaping Callback, orCancel cancelCallback: @escaping Callback) {
         
-        let alert = UIAlertController(title: "Affirmative Consent", message: "Are you sure you're sure?", preferredStyle: .alert)
+        let alert = UIAlertController(title: affirmativeConsentAgreement?.title, message: affirmativeConsentAgreement?.message, preferredStyle: .alert)
         let confirm = UIAlertAction(title: "Confirm", style: .default)  { action in
             continueCallback()
         }
@@ -59,7 +85,7 @@ extension AgreementViewController {
     
     @objc func continueButtonTapped() {
         
-        if agreement.requiresAffirmativeConsent {
+        if agreementToPresent.requiresAffirmativeConsent {
             
             askForAffirmativeConsent(andContinue: { 
                 self.dismissAndContinue()
@@ -94,7 +120,7 @@ extension AgreementViewController {
     }
     
     fileprivate func setupNavigation() {
-        switch agreement.navigationPosition {
+        switch agreementToPresent.navigationPosition {
         case .top:
             self.navigationItem.leftBarButtonItem = cancelButton
             self.navigationItem.rightBarButtonItem = continueButton

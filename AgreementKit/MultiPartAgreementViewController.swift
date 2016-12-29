@@ -149,9 +149,9 @@ extension MultiPartAgreementViewController: UITableViewDelegate {
         case .callToAction(_):
             
             let emailVC = MFMailComposeViewController()
-            emailVC.setSubject(agreement.title)
+            emailVC.setSubject(agreementToPresent.title)
             
-            if let message = agreement.message {
+            if let message = agreementToPresent.message {
                 emailVC.setMessageBody(message, isHTML: false)
             }
             

@@ -74,19 +74,19 @@ public struct Agreement {
     
 }
 
-public protocol AgreementProvider {
-    /// Provides the agreeement
-    var agreementToPresent: Agreement { get }
-}
-
-public protocol AffirmativeConsentProvider: AgreementProvider {
+public protocol AffirmativeConsentProvider {
     
     /// The agreement for the secondary notice that will appear. This appears as an additional alert on top of the first agreement.
     var affirmativeConsentAgreement: Agreement? { get }
 }
 
+public protocol AgreementProvider: AffirmativeConsentProvider {
+    /// Provides the agreeement
+    var agreementToPresent: Agreement! { get }
+}
+
 extension AffirmativeConsentProvider {
-    var consentRequired: Bool { return agreementToPresent != nil}
+    var consentRequired: Bool { return affirmativeConsentAgreement != nil}
 }
 
 extension AgreementProvider {
@@ -106,10 +106,10 @@ extension AgreementProvider {
 
 extension AgreementProvider where Self: UIViewController {
     
-    func presentAgreement(agreementViewController: UIViewController, from viewController: UIViewController? = nil) {
+    func present(_ viewControllerToPresent: UIViewController, from viewController: UIViewController? = nil) {
         
         let presenter = viewController ?? self
-        presenter.present(agreementViewController, animated: true, completion: nil)
+        presenter.present(viewControllerToPresent, animated: true, completion: nil)
         
     }
     
@@ -148,32 +148,24 @@ extension AgreementProvider where Self: UIViewController {
             let alert = alertViewController(andContinue: continueCallback, orCancel: cancelCallback)
             
             DispatchQueue.main.async {
-                self.presentAgreement(agreementViewController: alert)
+                self.present(alert)
             }
             
         case .multipart:
             
-            let bundle = Bundle(for: MultiPartAgreementViewController.self)
-            let multipartVC = MultiPartAgreementViewController(nibName: "MultiPartAgreementViewController", bundle: bundle)
-            multipartVC.cancelCallback = cancelCallback
-            multipartVC.continueCallback = continueCallback
-            multipartVC.agreement = agreementToPresent
+            let multipartVC = MultiPartAgreementViewController(agreementProvider: self, continueCallback: continueCallback, cancelCallback: cancelCallback)
             
             let nav = UINavigationController(rootViewController: multipartVC)
             nav.modalPresentationStyle = .formSheet
-            presentAgreement(agreementViewController: nav)
+            present(nav)
             
         case .textbox:
             
-            let bundle = Bundle(for: TextboxViewController.self)
-            let textboxVC = TextboxViewController(nibName: "TextboxViewController", bundle: bundle)
-            textboxVC.cancelCallback = cancelCallback
-            textboxVC.continueCallback = continueCallback
-            textboxVC.agreement = agreementToPresent
+            let textboxVC = TextboxViewController(agreementProvider: self, continueCallback: continueCallback, cancelCallback: cancelCallback)
             
             let nav = UINavigationController(rootViewController: textboxVC)
             nav.modalPresentationStyle = .formSheet
-            presentAgreement(agreementViewController: nav)
+            present(nav)
         }
 
         
