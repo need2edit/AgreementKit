@@ -10,6 +10,23 @@
 		325B00581E14625D00383FB2 /* AgreementKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325B004E1E14625D00383FB2 /* AgreementKit.framework */; };
 		325B005D1E14625D00383FB2 /* AgreementKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B005C1E14625D00383FB2 /* AgreementKitTests.swift */; };
 		325B005F1E14625D00383FB2 /* AgreementKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 325B00511E14625D00383FB2 /* AgreementKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		325B006F1E14627E00383FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B006E1E14627E00383FB2 /* AppDelegate.swift */; };
+		325B00711E14627E00383FB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B00701E14627E00383FB2 /* ViewController.swift */; };
+		325B00741E14627E00383FB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325B00721E14627E00383FB2 /* Main.storyboard */; };
+		325B00761E14627E00383FB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325B00751E14627E00383FB2 /* Assets.xcassets */; };
+		325B00791E14627E00383FB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325B00771E14627E00383FB2 /* LaunchScreen.storyboard */; };
+		325B007F1E14628900383FB2 /* Agreement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B007E1E14628900383FB2 /* Agreement.swift */; };
+		325B00811E1462B900383FB2 /* RequiresConsent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B00801E1462B900383FB2 /* RequiresConsent.swift */; };
+		325B00841E14673D00383FB2 /* AgreementKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325B004E1E14625D00383FB2 /* AgreementKit.framework */; };
+		325B00851E14673D00383FB2 /* AgreementKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 325B004E1E14625D00383FB2 /* AgreementKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		325B008B1E1475C700383FB2 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B00891E1473FF00383FB2 /* SegueHandlerType.swift */; };
+		325B008D1E14769F00383FB2 /* MultiPartAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B008C1E14769F00383FB2 /* MultiPartAgreementViewController.swift */; };
+		325B00921E1478E000383FB2 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B00911E1478E000383FB2 /* Constraints.swift */; };
+		325B00981E147BFA00383FB2 /* TextboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B00961E147BFA00383FB2 /* TextboxViewController.swift */; };
+		325B00991E147BFA00383FB2 /* TextboxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325B00971E147BFA00383FB2 /* TextboxViewController.xib */; };
+		325B009B1E1490FC00383FB2 /* RegisterCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B009A1E1490FC00383FB2 /* RegisterCellHelpers.swift */; };
+		325B009D1E14923600383FB2 /* MultiPartAgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325B009C1E14923600383FB2 /* MultiPartAgreementViewController.xib */; };
+		325B009F1E14938000383FB2 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B009E1E14938000383FB2 /* AgreementViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,7 +37,28 @@
 			remoteGlobalIDString = 325B004D1E14625D00383FB2;
 			remoteInfo = AgreementKit;
 		};
+		325B00861E14673D00383FB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 325B00451E14625D00383FB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 325B004D1E14625D00383FB2;
+			remoteInfo = AgreementKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		325B00881E14673D00383FB2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				325B00851E14673D00383FB2 /* AgreementKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		325B004E1E14625D00383FB2 /* AgreementKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AgreementKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +67,23 @@
 		325B00571E14625D00383FB2 /* AgreementKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgreementKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		325B005C1E14625D00383FB2 /* AgreementKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementKitTests.swift; sourceTree = "<group>"; };
 		325B005E1E14625D00383FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		325B006C1E14627D00383FB2 /* DemoAppiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoAppiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		325B006E1E14627E00383FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		325B00701E14627E00383FB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		325B00731E14627E00383FB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		325B00751E14627E00383FB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		325B00781E14627E00383FB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		325B007A1E14627E00383FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		325B007E1E14628900383FB2 /* Agreement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agreement.swift; sourceTree = "<group>"; };
+		325B00801E1462B900383FB2 /* RequiresConsent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiresConsent.swift; sourceTree = "<group>"; };
+		325B00891E1473FF00383FB2 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueHandlerType.swift; path = ../DemoAppiOS/SegueHandlerType.swift; sourceTree = "<group>"; };
+		325B008C1E14769F00383FB2 /* MultiPartAgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiPartAgreementViewController.swift; sourceTree = "<group>"; };
+		325B00911E1478E000383FB2 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		325B00961E147BFA00383FB2 /* TextboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextboxViewController.swift; sourceTree = "<group>"; };
+		325B00971E147BFA00383FB2 /* TextboxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextboxViewController.xib; sourceTree = "<group>"; };
+		325B009A1E1490FC00383FB2 /* RegisterCellHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCellHelpers.swift; sourceTree = "<group>"; };
+		325B009C1E14923600383FB2 /* MultiPartAgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiPartAgreementViewController.xib; sourceTree = "<group>"; };
+		325B009E1E14938000383FB2 /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +102,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		325B00691E14627D00383FB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				325B00841E14673D00383FB2 /* AgreementKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +118,7 @@
 			children = (
 				325B00501E14625D00383FB2 /* AgreementKit */,
 				325B005B1E14625D00383FB2 /* AgreementKitTests */,
+				325B006D1E14627E00383FB2 /* DemoAppiOS */,
 				325B004F1E14625D00383FB2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +128,7 @@
 			children = (
 				325B004E1E14625D00383FB2 /* AgreementKit.framework */,
 				325B00571E14625D00383FB2 /* AgreementKitTests.xctest */,
+				325B006C1E14627D00383FB2 /* DemoAppiOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +138,10 @@
 			children = (
 				325B00511E14625D00383FB2 /* AgreementKit.h */,
 				325B00521E14625D00383FB2 /* Info.plist */,
+				325B007E1E14628900383FB2 /* Agreement.swift */,
+				325B008E1E1476AD00383FB2 /* View Controllers */,
+				325B00801E1462B900383FB2 /* RequiresConsent.swift */,
+				325B00931E1478E900383FB2 /* Helpers */,
 			);
 			path = AgreementKit;
 			sourceTree = "<group>";
@@ -84,6 +153,41 @@
 				325B005E1E14625D00383FB2 /* Info.plist */,
 			);
 			path = AgreementKitTests;
+			sourceTree = "<group>";
+		};
+		325B006D1E14627E00383FB2 /* DemoAppiOS */ = {
+			isa = PBXGroup;
+			children = (
+				325B006E1E14627E00383FB2 /* AppDelegate.swift */,
+				325B00701E14627E00383FB2 /* ViewController.swift */,
+				325B00721E14627E00383FB2 /* Main.storyboard */,
+				325B00751E14627E00383FB2 /* Assets.xcassets */,
+				325B00771E14627E00383FB2 /* LaunchScreen.storyboard */,
+				325B007A1E14627E00383FB2 /* Info.plist */,
+			);
+			path = DemoAppiOS;
+			sourceTree = "<group>";
+		};
+		325B008E1E1476AD00383FB2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				325B009E1E14938000383FB2 /* AgreementViewController.swift */,
+				325B008C1E14769F00383FB2 /* MultiPartAgreementViewController.swift */,
+				325B009C1E14923600383FB2 /* MultiPartAgreementViewController.xib */,
+				325B00961E147BFA00383FB2 /* TextboxViewController.swift */,
+				325B00971E147BFA00383FB2 /* TextboxViewController.xib */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		325B00931E1478E900383FB2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				325B00891E1473FF00383FB2 /* SegueHandlerType.swift */,
+				325B009A1E1490FC00383FB2 /* RegisterCellHelpers.swift */,
+				325B00911E1478E000383FB2 /* Constraints.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +240,25 @@
 			productReference = 325B00571E14625D00383FB2 /* AgreementKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		325B006B1E14627D00383FB2 /* DemoAppiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 325B007B1E14627E00383FB2 /* Build configuration list for PBXNativeTarget "DemoAppiOS" */;
+			buildPhases = (
+				325B00681E14627D00383FB2 /* Sources */,
+				325B00691E14627D00383FB2 /* Frameworks */,
+				325B006A1E14627D00383FB2 /* Resources */,
+				325B00881E14673D00383FB2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				325B00871E14673D00383FB2 /* PBXTargetDependency */,
+			);
+			name = DemoAppiOS;
+			productName = DemoAppiOS;
+			productReference = 325B006C1E14627D00383FB2 /* DemoAppiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,9 +272,15 @@
 					325B004D1E14625D00383FB2 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = W8267A73DN;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					325B00561E14625D00383FB2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = W8267A73DN;
+						ProvisioningStyle = Automatic;
+					};
+					325B006B1E14627D00383FB2 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = W8267A73DN;
 						ProvisioningStyle = Automatic;
@@ -164,6 +293,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 325B00441E14625D00383FB2;
 			productRefGroup = 325B004F1E14625D00383FB2 /* Products */;
@@ -172,6 +302,7 @@
 			targets = (
 				325B004D1E14625D00383FB2 /* AgreementKit */,
 				325B00561E14625D00383FB2 /* AgreementKitTests */,
+				325B006B1E14627D00383FB2 /* DemoAppiOS */,
 			);
 		};
 /* End PBXProject section */
@@ -181,6 +312,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				325B009D1E14923600383FB2 /* MultiPartAgreementViewController.xib in Resources */,
+				325B00991E147BFA00383FB2 /* TextboxViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +324,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		325B006A1E14627D00383FB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				325B00791E14627E00383FB2 /* LaunchScreen.storyboard in Resources */,
+				325B00761E14627E00383FB2 /* Assets.xcassets in Resources */,
+				325B00741E14627E00383FB2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -198,6 +341,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				325B008D1E14769F00383FB2 /* MultiPartAgreementViewController.swift in Sources */,
+				325B00981E147BFA00383FB2 /* TextboxViewController.swift in Sources */,
+				325B00921E1478E000383FB2 /* Constraints.swift in Sources */,
+				325B00811E1462B900383FB2 /* RequiresConsent.swift in Sources */,
+				325B009B1E1490FC00383FB2 /* RegisterCellHelpers.swift in Sources */,
+				325B007F1E14628900383FB2 /* Agreement.swift in Sources */,
+				325B008B1E1475C700383FB2 /* SegueHandlerType.swift in Sources */,
+				325B009F1E14938000383FB2 /* AgreementViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +360,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		325B00681E14627D00383FB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				325B00711E14627E00383FB2 /* ViewController.swift in Sources */,
+				325B006F1E14627E00383FB2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -217,7 +377,31 @@
 			target = 325B004D1E14625D00383FB2 /* AgreementKit */;
 			targetProxy = 325B00591E14625D00383FB2 /* PBXContainerItemProxy */;
 		};
+		325B00871E14673D00383FB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 325B004D1E14625D00383FB2 /* AgreementKit */;
+			targetProxy = 325B00861E14673D00383FB2 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		325B00721E14627E00383FB2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				325B00731E14627E00383FB2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		325B00771E14627E00383FB2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				325B00781E14627E00383FB2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		325B00601E14625D00383FB2 /* Debug */ = {
@@ -322,6 +506,7 @@
 		325B00631E14625D00383FB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = W8267A73DN;
@@ -334,6 +519,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jy.AgreementKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +527,7 @@
 		325B00641E14625D00383FB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = W8267A73DN;
@@ -360,6 +547,7 @@
 		325B00661E14625D00383FB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W8267A73DN;
 				INFOPLIST_FILE = AgreementKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,10 +560,39 @@
 		325B00671E14625D00383FB2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W8267A73DN;
 				INFOPLIST_FILE = AgreementKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jy.AgreementKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		325B007C1E14627E00383FB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W8267A73DN;
+				INFOPLIST_FILE = DemoAppiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jy.DemoAppiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		325B007D1E14627E00383FB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W8267A73DN;
+				INFOPLIST_FILE = DemoAppiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jy.DemoAppiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -406,6 +623,14 @@
 			buildConfigurations = (
 				325B00661E14625D00383FB2 /* Debug */,
 				325B00671E14625D00383FB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		325B007B1E14627E00383FB2 /* Build configuration list for PBXNativeTarget "DemoAppiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325B007C1E14627E00383FB2 /* Debug */,
+				325B007D1E14627E00383FB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
