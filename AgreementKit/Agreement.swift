@@ -134,7 +134,7 @@ extension AgreementManager where Self: UIViewController {
             multipartVC.agreement = agreementToPresent()
             
             let nav = UINavigationController(rootViewController: multipartVC)
-            
+            nav.modalPresentationStyle = .formSheet
             presentAgreement(agreementViewController: nav)
             
         case .textbox:
@@ -146,7 +146,7 @@ extension AgreementManager where Self: UIViewController {
             textboxVC.agreement = agreementToPresent()
             
             let nav = UINavigationController(rootViewController: textboxVC)
-            
+            nav.modalPresentationStyle = .formSheet
             presentAgreement(agreementViewController: nav)
         }
 
