@@ -21,7 +21,6 @@ class ViewController: UIViewController, SegueHandlerType {
         askForConsent(andContinue: {
             // do something after agreement
             DispatchQueue.main.async { self.performSegue(segueIdentifier: .Agreed) }
-            
         }) {
             // cancel
             return
@@ -64,12 +63,10 @@ class ViewController: UIViewController, SegueHandlerType {
 
 }
 
-extension ViewController: AgreementManager {
+extension ViewController: AgreementProvider {
     
-    func agreementToPresent() -> Agreement {
-        
+    var agreementToPresent: Agreement {
         let body = "This is a sample agreement."
-        
         return Agreement(title: "Terms & Conditions", message: body, style: agreementStyle)
     }
     

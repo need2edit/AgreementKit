@@ -20,12 +20,21 @@ public protocol AgreementDelegate {
 
 public struct Agreement {
     
+    /// Controls the type of agreement UI that will appear for the user. This falls into one of three categories:
+    ///
+    /// - alert: Simple alert, designed to be 1-2 lines
+    /// - textbox: A full page form with body text in a textview
+    /// - multipart: A form with sections. Supports text, links, and calls to action.
     public enum Style {
         case alert
         case textbox(affirmativeConsent: Bool, navigationPosition: NavigationPosition)
         case multipart(affirmativeConsent: Bool, navigationPosition: NavigationPosition)
     }
     
+    /// Positions buttons in the navigation item or in the toolbar
+    ///
+    /// - top: places controls in the navigation bar
+    /// - bottom: places controls in the toolbar
     public enum NavigationPosition {
         case top
         case bottom
@@ -51,6 +60,12 @@ public struct Agreement {
         }
     }
     
+    /// Default initalizer with Strings.
+    ///
+    /// - Parameters:
+    ///   - title: The title of the agreement. This appears in the navigatin title of alert title.
+    ///   - message: The body text of the agreement. This appears in the text area of the form, or as the message in an alert.
+    ///   - style: The overall style of the agreement. `Alert`, `Textbox`, `Multipart` are available.
     public init(title: String, message: String?, style: Style = .alert) {
         self.style = style
         self.title = title
@@ -59,26 +74,37 @@ public struct Agreement {
     
 }
 
-public protocol AgreementManager {
-    func agreementToPresent() -> Agreement
+public protocol AgreementProvider {
+    /// Provides the agreeement
+    var agreementToPresent: Agreement { get }
 }
 
-extension AgreementManager {
+public protocol AffirmativeConsentProvider: AgreementProvider {
+    
+    /// The agreement for the secondary notice that will appear. This appears as an additional alert on top of the first agreement.
+    var affirmativeConsentAgreement: Agreement? { get }
+}
+
+extension AffirmativeConsentProvider {
+    var consentRequired: Bool { return agreementToPresent != nil}
+}
+
+extension AgreementProvider {
     
     func preferredAgreementStyle() -> Agreement.Style {
-        return agreementToPresent().style
+        return agreementToPresent.style
     }
     
     func titleForAgreement() -> String {
-        return agreementToPresent().title
+        return agreementToPresent.title
     }
     
     func descriptionForAgrement() -> String? {
-        return agreementToPresent().message
+        return agreementToPresent.message
     }
 }
 
-extension AgreementManager where Self: UIViewController {
+extension AgreementProvider where Self: UIViewController {
     
     func presentAgreement(agreementViewController: UIViewController, from viewController: UIViewController? = nil) {
         
@@ -131,7 +157,7 @@ extension AgreementManager where Self: UIViewController {
             let multipartVC = MultiPartAgreementViewController(nibName: "MultiPartAgreementViewController", bundle: bundle)
             multipartVC.cancelCallback = cancelCallback
             multipartVC.continueCallback = continueCallback
-            multipartVC.agreement = agreementToPresent()
+            multipartVC.agreement = agreementToPresent
             
             let nav = UINavigationController(rootViewController: multipartVC)
             nav.modalPresentationStyle = .formSheet
@@ -143,7 +169,7 @@ extension AgreementManager where Self: UIViewController {
             let textboxVC = TextboxViewController(nibName: "TextboxViewController", bundle: bundle)
             textboxVC.cancelCallback = cancelCallback
             textboxVC.continueCallback = continueCallback
-            textboxVC.agreement = agreementToPresent()
+            textboxVC.agreement = agreementToPresent
             
             let nav = UINavigationController(rootViewController: textboxVC)
             nav.modalPresentationStyle = .formSheet
