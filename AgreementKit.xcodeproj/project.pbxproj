@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		322092E81E1589AE00C8115A /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322092E71E1589AE00C8115A /* AgreementViewController.xib */; };
+		32253C481E16049500544E71 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32253C471E16049500544E71 /* Demo.swift */; };
 		325B00581E14625D00383FB2 /* AgreementKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325B004E1E14625D00383FB2 /* AgreementKit.framework */; };
 		325B005D1E14625D00383FB2 /* AgreementKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B005C1E14625D00383FB2 /* AgreementKitTests.swift */; };
 		325B005F1E14625D00383FB2 /* AgreementKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 325B00511E14625D00383FB2 /* AgreementKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		322092E71E1589AE00C8115A /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
+		32253C471E16049500544E71 /* Demo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		325B004E1E14625D00383FB2 /* AgreementKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AgreementKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		325B00511E14625D00383FB2 /* AgreementKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgreementKit.h; sourceTree = "<group>"; };
 		325B00521E14625D00383FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				325B006E1E14627E00383FB2 /* AppDelegate.swift */,
 				325B00701E14627E00383FB2 /* ViewController.swift */,
+				32253C471E16049500544E71 /* Demo.swift */,
 				325B00721E14627E00383FB2 /* Main.storyboard */,
 				325B00751E14627E00383FB2 /* Assets.xcassets */,
 				325B00771E14627E00383FB2 /* LaunchScreen.storyboard */,
@@ -362,6 +365,7 @@
 			files = (
 				325B00711E14627E00383FB2 /* ViewController.swift in Sources */,
 				325B006F1E14627E00383FB2 /* AppDelegate.swift in Sources */,
+				32253C481E16049500544E71 /* Demo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

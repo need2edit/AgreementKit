@@ -83,12 +83,14 @@ public struct Agreement {
         }
     }
     
-    /// Default initalizer with Strings.
+    /// Default initalizer with a title, message, and labels for buttons.
     ///
     /// - Parameters:
     ///   - title: The title of the agreement. This appears in the navigatin title of alert title.
     ///   - message: The body text of the agreement. This appears in the text area of the form, or as the message in an alert.
     ///   - style: The overall style of the agreement. `Alert`, `Textbox`, `Multipart` are available.
+    ///   - continueLabel: label for the agree button
+    ///   - cancelLabel: label for the cancel button
     public init(title: String, message: String?, style: Style = .alert, continueLabel: String = "Agree", cancelLabel: String = "Cancel") {
         self.style = style
         self.title = title
@@ -98,6 +100,15 @@ public struct Agreement {
         self.sections = [.text(title, message)]
     }
     
+    
+    /// Initalizer with a title, labels for buttons, and multiple sections.
+    ///
+    /// - Parameters:
+    ///   - title: the title for the agreement
+    ///   - sections: the text blocks, links, and calls to action for the agreement
+    ///   - style: the overall style for the agreement
+    ///   - continueLabel: the label for the agree button
+    ///   - cancelLabel: label for the cancel button
     public init(title: String, sections: [Section], style: Style = .alert, continueLabel: String = "Agree", cancelLabel: String = "Cancel") {
         self.style = style
         self.title = title
