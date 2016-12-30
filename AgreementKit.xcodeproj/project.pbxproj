@@ -63,6 +63,7 @@
 /* Begin PBXFileReference section */
 		322092E71E1589AE00C8115A /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		32253C471E16049500544E71 /* Demo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
+		32253C491E160D3000544E71 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		325B004E1E14625D00383FB2 /* AgreementKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AgreementKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		325B00511E14625D00383FB2 /* AgreementKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgreementKit.h; sourceTree = "<group>"; };
 		325B00521E14625D00383FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		325B00441E14625D00383FB2 = {
 			isa = PBXGroup;
 			children = (
+				32253C491E160D3000544E71 /* README.md */,
 				325B00501E14625D00383FB2 /* AgreementKit */,
 				325B005B1E14625D00383FB2 /* AgreementKitTests */,
 				325B006D1E14627E00383FB2 /* DemoAppiOS */,
