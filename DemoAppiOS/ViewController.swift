@@ -16,23 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var affirmativeConsentControl: UISwitch!
     @IBOutlet weak var navigationPositionSegmentedControl: UISegmentedControl!
     @IBOutlet weak var agreementStyleSegmentedControl: UISegmentedControl!
-
-    // MARK: - Run Demo
-    @IBAction func demoConsentForm(_ sender: Any) {
-        
-        requireConsent(before: { 
-            // proceeding
-             DispatchQueue.main.async { self.performSegue(segueIdentifier: .Agreed) }
-        }) { 
-            // cancelling
-            return
-        }
-        
-    }
     
     // MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "AgreementKit"
         performDemoButton.layer.cornerRadius = 6.0
         performDemoButton.backgroundColor = view.tintColor
     }
@@ -73,6 +62,19 @@ extension ViewController: SegueHandlerType {
         case Disagreed
     }
     
+    // MARK: - Run Demo
+    @IBAction func demoConsentForm(_ sender: Any) {
+        
+        requireConsent(before: {
+            // proceeding
+            DispatchQueue.main.async { self.performSegue(segueIdentifier: .Agreed) }
+        }) {
+            // cancelling
+            return
+        }
+        
+    }
+    
 }
 
 extension ViewController: AgreementProvider {
@@ -94,7 +96,7 @@ extension ViewController: AgreementProvider {
     
     var affirmativeConsentAgreement: Agreement? {
         let body = "This is called \"Affirmative Consent\", or a secondary agreement that you're requiring because you really want people to be sure."
-        return Agreement(title: "Are you sure you're sure?", message: body, style: .alert, continueLabel: "I'm Super Sure", cancelLabel: "Nope!")
+        return Agreement(title: "Are you sure you're sure?", message: body, style: .alert, continueLabel: "Continue", cancelLabel: "Nope!")
     }
     
 }

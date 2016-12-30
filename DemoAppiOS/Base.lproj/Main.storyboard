@@ -97,7 +97,7 @@
                                             <constraint firstAttribute="height" constant="64" id="KjY-iP-h4I"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <state key="normal" title="Do Something with Agreement">
+                                        <state key="normal" title="Continue with Agreement">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
