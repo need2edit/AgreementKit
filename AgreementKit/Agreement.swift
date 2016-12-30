@@ -21,6 +21,34 @@ public struct Agreement {
         case multipart(affirmativeConsent: Bool, navigationPosition: NavigationPosition)
     }
     
+    public enum Section {
+        case text(String, String?)
+        case callToAction(String)
+        case link(String, URL?)
+        
+        public var attributedText: NSAttributedString {
+            switch self {
+            case .text(let headline, let bodyText):
+                let rowText = NSMutableAttributedString(string: headline.uppercased(), attributes: [NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14)])
+                
+                if let bodyText = bodyText, !bodyText.isEmpty {
+                    
+                    let formattedBodyText = NSMutableAttributedString(string: bodyText, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 14)])
+                    
+                    rowText.append(NSAttributedString(string: "\n"))
+                    
+                    rowText.append(formattedBodyText)
+                    
+                }
+                return rowText
+            case .callToAction(let description):
+                return NSMutableAttributedString(string: description, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16)])
+            case .link(let description, _):
+                return NSMutableAttributedString(string: description, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)])
+            }
+        }
+    }
+    
     /// Positions buttons in the navigation item or in the toolbar
     ///
     /// - top: places controls in the navigation bar
@@ -33,6 +61,8 @@ public struct Agreement {
     let style: Style
     let title: String
     let message: String?
+    
+    let sections: [Section]
     
     let continueLabel: String
     let cancelLabel: String
@@ -65,6 +95,16 @@ public struct Agreement {
         self.message = message
         self.continueLabel = continueLabel
         self.cancelLabel = cancelLabel
+        self.sections = [.text(title, message)]
+    }
+    
+    public init(title: String, sections: [Section], style: Style = .alert, continueLabel: String = "Agree", cancelLabel: String = "Cancel") {
+        self.style = style
+        self.title = title
+        self.message = nil
+        self.continueLabel = continueLabel
+        self.cancelLabel = cancelLabel
+        self.sections = sections
     }
     
 }
