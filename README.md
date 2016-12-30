@@ -9,11 +9,9 @@ If you want a view controller to present an agreement, setup is easy:
 3. Before performing any task, use `requireConsent` like this:
 
 ```
-    requireConsent(before: { 
+    requireConsent { 
         // do something after the consent form
-    }, orCancel: {
-        // cancelling
-    })
+    }
 ```
 
 # Getting Started
