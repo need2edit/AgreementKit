@@ -5,7 +5,7 @@ AgreementKit is an easy way to ask users to agree to terms & conditions, questio
 If you want a view controller to present an agreement, setup is easy:
 
 1. Have your view controller conform to the `AgreementProvider` protocol.
-2. Provide an Agreement with the desired text and style.
+2. Provide an `Agreement` with the desired text and style.
 3. Before performing any task, use `requireConsent` like this:
 
 ```
@@ -18,7 +18,9 @@ If you want a view controller to present an agreement, setup is easy:
 
 # Getting Started
 ## Carthage
-## 
+
+**AgreementKit** supports Carthage. CocoaPods is on the TODO list. 
+
 # Working with Agreements
 ## Alert
 
