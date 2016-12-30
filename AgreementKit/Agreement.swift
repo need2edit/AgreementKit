@@ -189,13 +189,18 @@ extension AgreementProvider where Self: UIViewController {
         return alert
     }
     
+    public func requireConsent(andContinue continueCallback: @escaping () -> ()) {
+        requireConsent(andContinue: continueCallback, orCancel: {
+            return
+        })
+    }
     
     /// Presents a modal view controller before proceeding.
     ///
     /// - Parameters:
     ///   - continueCallback: code that executes when the user agrees
     ///   - cancelCallback: code that executes when the user declines
-    public func requireConsent(before continueCallback: @escaping () -> (), orCancel cancelCallback: @escaping () -> ()) {
+    public func requireConsent(andContinue continueCallback: @escaping () -> (), orCancel cancelCallback: @escaping () -> ()) {
         
         switch preferredAgreementStyle {
             

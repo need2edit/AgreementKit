@@ -64,19 +64,9 @@ extension ViewController: SegueHandlerType {
     
     // MARK: - Run Demo
     @IBAction func demoConsentForm(_ sender: Any) {
-        
-        requireConsent(before: { 
-            // do something after the consent form
-        }, orCancel: {
-            // cancelling
-        })
-        
-        requireConsent(before: {
-            // proceeding
+    
+        requireConsent {
             DispatchQueue.main.async { self.performSegue(segueIdentifier: .Agreed) }
-        }) {
-            // cancelling
-            return
         }
         
     }

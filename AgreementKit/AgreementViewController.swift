@@ -37,6 +37,10 @@ public class AgreementViewController: UIViewController, AgreementViewManager {
             continueCallback: continueCallback,
             cancelCallback: cancelCallback
         )
+        
+        if let delegate = provider as? AgreementViewControllerDelegate {
+            self.delegate = delegate
+        }
     }
     
     public init(agreement: Agreement, affirmativeAgreement: Agreement? = nil, continueCallback: Callback?, cancelCallback: Callback?) {
