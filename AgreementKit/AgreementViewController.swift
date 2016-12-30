@@ -11,12 +11,24 @@ import MessageUI
 
 public typealias Callback = () -> ()
 
+public protocol AgreementViewControllerDelegate {
+    
+    func didProvideConsent(using controller: AgreementViewController)
+    func didDeclineConsent(using controller: AgreementViewController)
+    
+    func didProvideAffirmativeConsent()
+    func didDeclineAffirmativeConsent()
+    
+}
+
 public protocol AgreementViewManager: AgreementProvider {
     var continueCallback: Callback? { get set }
     var cancelCallback: Callback? { get set }
 }
 
 public class AgreementViewController: UIViewController, AgreementViewManager {
+    
+    public var delegate: AgreementViewControllerDelegate?
     
     convenience init(agreementProvider provider: AgreementProvider, continueCallback: Callback?, cancelCallback: Callback?) {
         self.init(
@@ -58,10 +70,14 @@ public class AgreementViewController: UIViewController, AgreementViewManager {
     func askForAffirmativeConsent(andContinue continueCallback: @escaping Callback, orCancel cancelCallback: @escaping Callback) {
         
         let alert = UIAlertController(title: affirmativeConsentAgreement?.title, message: affirmativeConsentAgreement?.message, preferredStyle: .alert)
-        let confirm = UIAlertAction(title: "Confirm", style: .default)  { action in
+        
+        let confirm = UIAlertAction(title: affirmativeConsentAgreement?.continueLabel, style: .default)  { action in
             continueCallback()
+            self.delegate?.didProvideAffirmativeConsent()
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { action in
+        
+        let cancel = UIAlertAction(title: affirmativeConsentAgreement?.cancelLabel, style: .cancel) { action in
+            self.delegate?.didDeclineAffirmativeConsent()
             return
         }
         
@@ -77,12 +93,16 @@ public class AgreementViewController: UIViewController, AgreementViewManager {
 
 extension AgreementViewController {
     
+    
+    /// Dismisses the view controller and executes the continue callback.
     func dismissAndContinue() {
         dismiss(animated: true) {
             self.continueCallback?()
+            self.delegate?.didProvideConsent(using: self)
         }
     }
     
+    /// The user has accepted the agreement.
     @objc func continueButtonTapped() {
         
         if agreementToPresent.requiresAffirmativeConsent {
@@ -99,20 +119,23 @@ extension AgreementViewController {
     
     }
     
+    
+    /// The user has declined the primary agreement.
     @objc func cancelButtonTapped() {
         dismiss(animated: true) {
             self.cancelCallback?()
+            self.delegate?.didDeclineConsent(using: self)
         }
     }
     
     fileprivate var continueButton: UIBarButtonItem {
         let action = #selector(TextboxViewController.continueButtonTapped)
-        return UIBarButtonItem(title: "Agree", style: .done, target: self, action: action)
+        return UIBarButtonItem(title: agreementToPresent.continueLabel, style: .done, target: self, action: action)
     }
     
     fileprivate var cancelButton: UIBarButtonItem {
         let action = #selector(TextboxViewController.cancelButtonTapped)
-        return UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: action)
+        return UIBarButtonItem(title: agreementToPresent.cancelLabel, style: .plain, target: self, action: action)
     }
     
     fileprivate var flexibleBarButtonSpace: UIBarButtonItem {

@@ -9,37 +9,38 @@
 import UIKit
 import AgreementKit
 
-class ViewController: UIViewController, SegueHandlerType {
+class ViewController: UIViewController {
     
-    enum SegueIdentifier: String {
-        case Agreed
-        case Disagreed
-    }
+    // MARK: - Demo Controls
+    @IBOutlet weak var performDemoButton: UIButton!
+    @IBOutlet weak var affirmativeConsentControl: UISwitch!
+    @IBOutlet weak var navigationPositionSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var agreementStyleSegmentedControl: UISegmentedControl!
 
+    // MARK: - Run Demo
     @IBAction func demoConsentForm(_ sender: Any) {
         
-        askForConsent(andContinue: {
-            // do something after agreement
-            DispatchQueue.main.async { self.performSegue(segueIdentifier: .Agreed) }
-        }) {
-            // cancel
+        requireConsent(before: { 
+            // proceeding
+             DispatchQueue.main.async { self.performSegue(segueIdentifier: .Agreed) }
+        }) { 
+            // cancelling
             return
         }
         
     }
     
+    // MARK: View Controller Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         performDemoButton.layer.cornerRadius = 6.0
         performDemoButton.backgroundColor = view.tintColor
     }
 
-    @IBOutlet weak var performDemoButton: UIButton!
-    @IBOutlet weak var affirmativeConsentControl: UISwitch!
-    
-    @IBOutlet weak var navigationPositionSegmentedControl: UISegmentedControl!
-    
-    @IBOutlet weak var agreementStyleSegmentedControl: UISegmentedControl!
+}
+
+// MARK: - Determining Demo Options from Selected
+extension ViewController {
     
     var affirmativeConsentRequired: Bool {
         return affirmativeConsentControl.isOn
@@ -60,19 +61,40 @@ class ViewController: UIViewController, SegueHandlerType {
         default: return .alert
         }
     }
+    
+}
 
+
+// MARK: - SegueHandlerType
+extension ViewController: SegueHandlerType {
+    
+    enum SegueIdentifier: String {
+        case Agreed
+        case Disagreed
+    }
+    
 }
 
 extension ViewController: AgreementProvider {
     
+    fileprivate var bodyText: String {
+        switch agreementStyle {
+        case .alert:
+            return "This is a primary agreement. The alert style usually only has 1-3 lines of body text."
+        case .multipart:
+            return "This is a primary agreement. The multipart style uses multiple sections with different styles."
+        case .textbox:
+            return "This is a primary agreement. The text box style is designed for a few paragraphs of text. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non pharetra ipsum, quis semper neque. Cras ac ante sapien. Etiam non felis fermentum, fermentum erat in, volutpat diam. Cras a metus maximus, mattis erat ac, eleifend velit. Maecenas nec lacus sodales, imperdiet quam sit amet, elementum est. Aliquam ipsum ligula, pretium sollicitudin justo ut, vestibulum vehicula tellus. Vivamus feugiat mauris nec leo pharetra ullamcorper. \n\nQuisque nulla lorem, eleifend id nisl eget, ultrices consequat dolor. Phasellus purus erat, semper eget neque ut, sodales congue diam. Nullam accumsan quam sit amet mauris tincidunt suscipit. Nullam pellentesque egestas nisi vel cursus. Integer massa ex, posuere vitae sollicitudin sit amet, bibendum sit amet mi. Vivamus ut fermentum nunc, quis venenatis mauris. Duis non sagittis dolor. In bibendum feugiat ex sit amet luctus. Vivamus imperdiet egestas mauris, sit amet eleifend sem. Nullam elementum lacus eleifend dapibus maximus. Integer a mi nisi. Integer non massa dictum lectus fringilla malesuada. Cras pellentesque vitae nisl vel tincidunt. Pellentesque a tempus libero, non scelerisque turpis. Nulla sit amet felis et nisl accumsan convallis sed rhoncus dolor. Nam diam velit, vehicula at feugiat nec, ullamcorper vel diam."
+        }
+    }
+    
     var agreementToPresent: Agreement! {
-        let body = "This is a sample primary agreement."
-        return Agreement(title: "Terms & Conditions", message: body, style: agreementStyle)
+        return Agreement(title: "Terms & Conditions", message: bodyText, style: agreementStyle, continueLabel: "I'm Sure", cancelLabel: "Nope!")
     }
     
     var affirmativeConsentAgreement: Agreement? {
-        let body = "This is a secondary agreement that you're requiring because you really want people to be sure."
-        return Agreement(title: "Are you sure you're sure?", message: body)
+        let body = "This is called \"Affirmative Consent\", or a secondary agreement that you're requiring because you really want people to be sure."
+        return Agreement(title: "Are you sure you're sure?", message: body, style: .alert, continueLabel: "I'm Super Sure", cancelLabel: "Nope!")
     }
     
 }

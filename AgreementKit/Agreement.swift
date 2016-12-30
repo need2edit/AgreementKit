@@ -8,16 +8,6 @@
 
 import UIKit
 
-public protocol AgreementDelegate {
-    
-    func didProvideConsent()
-    func didDeclineConsent()
-    
-    func didProvideAffirmativeConsent()
-    func didDeclineAffirmativeConsent()
-    
-}
-
 public struct Agreement {
     
     /// Controls the type of agreement UI that will appear for the user. This falls into one of three categories:
@@ -44,6 +34,9 @@ public struct Agreement {
     let title: String
     let message: String?
     
+    let continueLabel: String
+    let cancelLabel: String
+    
     var requiresAffirmativeConsent: Bool {
         switch style {
         case .alert: return false
@@ -66,10 +59,12 @@ public struct Agreement {
     ///   - title: The title of the agreement. This appears in the navigatin title of alert title.
     ///   - message: The body text of the agreement. This appears in the text area of the form, or as the message in an alert.
     ///   - style: The overall style of the agreement. `Alert`, `Textbox`, `Multipart` are available.
-    public init(title: String, message: String?, style: Style = .alert) {
+    public init(title: String, message: String?, style: Style = .alert, continueLabel: String = "Agree", cancelLabel: String = "Cancel") {
         self.style = style
         self.title = title
         self.message = message
+        self.continueLabel = continueLabel
+        self.cancelLabel = cancelLabel
     }
     
 }
@@ -91,24 +86,30 @@ extension AffirmativeConsentProvider {
 
 extension AgreementProvider {
     
-    func preferredAgreementStyle() -> Agreement.Style {
+    fileprivate var preferredAgreementStyle: Agreement.Style {
         return agreementToPresent.style
     }
     
-    func titleForAgreement() -> String {
+    fileprivate var agreementTitle: String {
         return agreementToPresent.title
     }
     
-    func descriptionForAgrement() -> String? {
+    fileprivate var agreementDescription: String? {
         return agreementToPresent.message
     }
 }
 
 extension AgreementProvider where Self: UIViewController {
     
-    func present(_ viewControllerToPresent: UIViewController, from viewController: UIViewController? = nil) {
+    
+    /// Convience method for presenting alerts from more complicated view hierarchies.
+    ///
+    /// - Parameters:
+    ///   - viewControllerToPresent: the view controller to present
+    ///   - viewController: the view controller to present from
+    func present(_ viewControllerToPresent: UIViewController, from context: UIViewController? = nil) {
         
-        let presenter = viewController ?? self
+        let presenter = context ?? self
         presenter.present(viewControllerToPresent, animated: true, completion: nil)
         
     }
@@ -121,13 +122,13 @@ extension AgreementProvider where Self: UIViewController {
     /// - Returns: UIAlertController with 2 actions, one to continue, one to cancel
     fileprivate func alertViewController(andContinue continueCallback: @escaping () -> (), orCancel cancelCallback: @escaping () -> ()) -> UIAlertController {
         
-        let alert = UIAlertController(title: titleForAgreement(), message: descriptionForAgrement(), preferredStyle: .alert)
+        let alert = UIAlertController(title: agreementTitle, message: agreementDescription, preferredStyle: .alert)
         
-        let agree = UIAlertAction(title: "Agree", style: .default, handler: { action in
+        let agree = UIAlertAction(title: agreementToPresent.continueLabel, style: .default, handler: { action in
             continueCallback()
         })
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+        let cancel = UIAlertAction(title: agreementToPresent.cancelLabel, style: .cancel, handler: { action in
             cancelCallback()
         })
         
@@ -137,19 +138,21 @@ extension AgreementProvider where Self: UIViewController {
         return alert
     }
     
-    public func askForConsent(andContinue continueCallback: @escaping () -> (), orCancel cancelCallback: @escaping () -> ()) {
+    
+    /// Presents a modal view controller before proceeding.
+    ///
+    /// - Parameters:
+    ///   - continueCallback: code that executes when the user agrees
+    ///   - cancelCallback: code that executes when the user declines
+    public func requireConsent(before continueCallback: @escaping () -> (), orCancel cancelCallback: @escaping () -> ()) {
         
-        let style = preferredAgreementStyle()
-        
-        switch style {
+        switch preferredAgreementStyle {
             
         case .alert:
             
             let alert = alertViewController(andContinue: continueCallback, orCancel: cancelCallback)
             
-            DispatchQueue.main.async {
-                self.present(alert)
-            }
+            DispatchQueue.main.async { self.present(alert) }
             
         case .multipart:
             
@@ -157,7 +160,7 @@ extension AgreementProvider where Self: UIViewController {
             
             let nav = UINavigationController(rootViewController: multipartVC)
             nav.modalPresentationStyle = .formSheet
-            present(nav)
+            DispatchQueue.main.async { self.present(nav) }
             
         case .textbox:
             
@@ -165,7 +168,7 @@ extension AgreementProvider where Self: UIViewController {
             
             let nav = UINavigationController(rootViewController: textboxVC)
             nav.modalPresentationStyle = .formSheet
-            present(nav)
+            DispatchQueue.main.async { self.present(nav) }
         }
 
         

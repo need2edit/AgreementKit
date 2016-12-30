@@ -15,6 +15,8 @@ public class TextboxViewController: AgreementViewController {
     lazy var textView: UITextView = {
         
         let tv = UITextView(frame: .zero)
+        tv.isEditable = false
+        tv.isSelectable = true
         return tv
         
     }()
