@@ -27,6 +27,7 @@
 		325B00981E147BFA00383FB2 /* TextboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B00961E147BFA00383FB2 /* TextboxViewController.swift */; };
 		325B009B1E1490FC00383FB2 /* RegisterCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B009A1E1490FC00383FB2 /* RegisterCellHelpers.swift */; };
 		325B009F1E14938000383FB2 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B009E1E14938000383FB2 /* AgreementViewController.swift */; };
+		32F295001E1887A800AFEFA4 /* AgreementProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F294FF1E1887A800AFEFA4 /* AgreementProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		325B00961E147BFA00383FB2 /* TextboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextboxViewController.swift; sourceTree = "<group>"; };
 		325B009A1E1490FC00383FB2 /* RegisterCellHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCellHelpers.swift; sourceTree = "<group>"; };
 		325B009E1E14938000383FB2 /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		32F294FF1E1887A800AFEFA4 /* AgreementProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				325B00511E14625D00383FB2 /* AgreementKit.h */,
 				325B00521E14625D00383FB2 /* Info.plist */,
 				325B007E1E14628900383FB2 /* Agreement.swift */,
+				32F294FE1E18877D00AFEFA4 /* Protocols */,
 				325B008E1E1476AD00383FB2 /* View Controllers */,
 				325B00801E1462B900383FB2 /* RequiresConsent.swift */,
 				325B00931E1478E900383FB2 /* Helpers */,
@@ -190,6 +193,14 @@
 				325B00911E1478E000383FB2 /* Constraints.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		32F294FE1E18877D00AFEFA4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				32F294FF1E1887A800AFEFA4 /* AgreementProvider.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				325B008D1E14769F00383FB2 /* MultiPartAgreementViewController.swift in Sources */,
+				32F295001E1887A800AFEFA4 /* AgreementProvider.swift in Sources */,
 				325B00981E147BFA00383FB2 /* TextboxViewController.swift in Sources */,
 				325B00921E1478E000383FB2 /* Constraints.swift in Sources */,
 				325B00811E1462B900383FB2 /* RequiresConsent.swift in Sources */,
