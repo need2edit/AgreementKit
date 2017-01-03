@@ -5,6 +5,15 @@ AgreementKit is an easy way to ask users to agree to terms & conditions, questio
 If you want a view controller to present an agreement, setup is easy:
 
 1. Have your view controller conform to the `AgreementProvider` protocol.
+
+```
+extension ViewController: AgreementProvider { 
+    var agreementToPresent: Agreement! { ... } // primary first agreement
+    var affirmativeConsentAgreement: Agreement? { ... } // optional second agreement
+}
+
+```
+
 2. Provide an `Agreement` with the desired text and style.
 3. Before performing any task, use `requireConsent` like this:
 
