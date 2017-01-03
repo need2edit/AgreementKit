@@ -6,26 +6,26 @@ If you want a view controller to present an agreement, setup is easy:
 
 1. Have your view controller conform to the `AgreementProvider` protocol.
 
-```
-extension ViewController: AgreementProvider { 
-    var agreementToPresent: Agreement! { ... } // primary first agreement
-    var affirmativeConsentAgreement: Agreement? { ... } // optional second agreement
-}
-```
+    ```
+    extension ViewController: AgreementProvider { 
+        var agreementToPresent: Agreement! { ... } // primary first agreement
+        var affirmativeConsentAgreement: Agreement? { ... } // optional second agreement
+    }
+    ```
 
 2. Provide an `Agreement` with the desired text and style.
 
-```
-return Agreement(title: "Terms & Conditions", message: "This is a primary agreement. The alert style usually only has 1-2 lines of body text.", style: .alert, requiresAffirmativeConsent: affirmativeConsent, continueLabel: "I'm Sure", cancelLabel: "Nope!")
-```
+    ```
+    return Agreement(title: "Terms & Conditions", message: "This is a primary agreement. The alert style usually only has 1-2 lines of body text.", style: .alert, requiresAffirmativeConsent: affirmativeConsent, continueLabel: "I'm Sure", cancelLabel: "Nope!")
+    ```
 
 3. Before performing any task, call `requireConsent` from your view controller like this:
 
-```
-requireConsent { 
-        // do something after the consent form
-}
-```
+    ```
+    requireConsent { 
+            // do something after the consent form
+    }
+    ```
 
 # Getting Started
 ## Carthage
