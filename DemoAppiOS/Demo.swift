@@ -14,7 +14,7 @@ extension Agreement {
         
         
         static func alert(affirmativeConsent: Bool) -> Agreement {
-            return Agreement(title: "Terms & Conditions", message: "This is a primary agreement. The alert style usually only has 1-3 lines of body text.", style: .alert, requiresAffirmativeConsent: affirmativeConsent, continueLabel: "I'm Sure", cancelLabel: "Nope!")
+            return Agreement(title: "Terms & Conditions", message: "This is a primary agreement using the .alert style. \n\n Do you understand?", style: .alert, requiresAffirmativeConsent: affirmativeConsent, continueLabel: "I get it!", cancelLabel: "Nope!")
         }
         
         static func textbox(affirmativeConsent: Bool, navigationPosition: Agreement.NavigationPosition) -> Agreement {
