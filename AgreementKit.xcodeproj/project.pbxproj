@@ -27,6 +27,7 @@
 		325B00981E147BFA00383FB2 /* TextboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B00961E147BFA00383FB2 /* TextboxViewController.swift */; };
 		325B009B1E1490FC00383FB2 /* RegisterCellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B009A1E1490FC00383FB2 /* RegisterCellHelpers.swift */; };
 		325B009F1E14938000383FB2 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325B009E1E14938000383FB2 /* AgreementViewController.swift */; };
+		329CDBA01E1B643A00D314D2 /* Agreement_UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329CDB9F1E1B643A00D314D2 /* Agreement_UIAlertController.swift */; };
 		32F295001E1887A800AFEFA4 /* AgreementProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F294FF1E1887A800AFEFA4 /* AgreementProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		325B00961E147BFA00383FB2 /* TextboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextboxViewController.swift; sourceTree = "<group>"; };
 		325B009A1E1490FC00383FB2 /* RegisterCellHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCellHelpers.swift; sourceTree = "<group>"; };
 		325B009E1E14938000383FB2 /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		329CDB9F1E1B643A00D314D2 /* Agreement_UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agreement_UIAlertController.swift; sourceTree = "<group>"; };
 		32F294FF1E1887A800AFEFA4 /* AgreementProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 				322092E71E1589AE00C8115A /* AgreementViewController.xib */,
 				325B008C1E14769F00383FB2 /* MultiPartAgreementViewController.swift */,
 				325B00961E147BFA00383FB2 /* TextboxViewController.swift */,
+				329CDB9F1E1B643A00D314D2 /* Agreement_UIAlertController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				325B009B1E1490FC00383FB2 /* RegisterCellHelpers.swift in Sources */,
 				325B007F1E14628900383FB2 /* Agreement.swift in Sources */,
 				325B008B1E1475C700383FB2 /* SegueHandlerType.swift in Sources */,
+				329CDBA01E1B643A00D314D2 /* Agreement_UIAlertController.swift in Sources */,
 				325B009F1E14938000383FB2 /* AgreementViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

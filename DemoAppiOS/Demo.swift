@@ -13,21 +13,21 @@ extension Agreement {
     public struct Example {
         
         
-        static func alert() -> Agreement {
-            return Agreement(title: "Terms & Conditions", message: "This is a primary agreement. The alert style usually only has 1-3 lines of body text.", style: .alert, continueLabel: "I'm Sure", cancelLabel: "Nope!")
+        static func alert(affirmativeConsent: Bool) -> Agreement {
+            return Agreement(title: "Terms & Conditions", message: "This is a primary agreement. The alert style usually only has 1-3 lines of body text.", style: .alert, requiresAffirmativeConsent: affirmativeConsent, continueLabel: "I'm Sure", cancelLabel: "Nope!")
         }
         
         static func textbox(affirmativeConsent: Bool, navigationPosition: Agreement.NavigationPosition) -> Agreement {
             
-            let style = Agreement.Style.multipart(affirmativeConsent: affirmativeConsent, navigationPosition: navigationPosition)
+            let style = Agreement.Style.multipart(navigationPosition: navigationPosition)
             
-            return Agreement(title: "Terms & Conditions", message: "This is a primary agreement. The text box style is designed for a few paragraphs of text. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non pharetra ipsum, quis semper neque. Cras ac ante sapien. Etiam non felis fermentum, fermentum erat in, volutpat diam. Cras a metus maximus, mattis erat ac, eleifend velit. Maecenas nec lacus sodales, imperdiet quam sit amet, elementum est. Aliquam ipsum ligula, pretium sollicitudin justo ut, vestibulum vehicula tellus. Vivamus feugiat mauris nec leo pharetra ullamcorper. \n\nQuisque nulla lorem, eleifend id nisl eget, ultrices consequat dolor. Phasellus purus erat, semper eget neque ut, sodales congue diam. Nullam accumsan quam sit amet mauris tincidunt suscipit. Nullam pellentesque egestas nisi vel cursus. Integer massa ex, posuere vitae sollicitudin sit amet, bibendum sit amet mi. Vivamus ut fermentum nunc, quis venenatis mauris. Duis non sagittis dolor. In bibendum feugiat ex sit amet luctus. Vivamus imperdiet egestas mauris, sit amet eleifend sem. Nullam elementum lacus eleifend dapibus maximus. Integer a mi nisi. Integer non massa dictum lectus fringilla malesuada. Cras pellentesque vitae nisl vel tincidunt. Pellentesque a tempus libero, non scelerisque turpis. Nulla sit amet felis et nisl accumsan convallis sed rhoncus dolor. Nam diam velit, vehicula at feugiat nec, ullamcorper vel diam.", style: style, continueLabel: "I'm Sure", cancelLabel: "Nope!")
+            return Agreement(title: "Terms & Conditions", message: "This is a primary agreement. The text box style is designed for a few paragraphs of text. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non pharetra ipsum, quis semper neque. Cras ac ante sapien. Etiam non felis fermentum, fermentum erat in, volutpat diam. Cras a metus maximus, mattis erat ac, eleifend velit. Maecenas nec lacus sodales, imperdiet quam sit amet, elementum est. Aliquam ipsum ligula, pretium sollicitudin justo ut, vestibulum vehicula tellus. Vivamus feugiat mauris nec leo pharetra ullamcorper. \n\nQuisque nulla lorem, eleifend id nisl eget, ultrices consequat dolor. Phasellus purus erat, semper eget neque ut, sodales congue diam. Nullam accumsan quam sit amet mauris tincidunt suscipit. Nullam pellentesque egestas nisi vel cursus. Integer massa ex, posuere vitae sollicitudin sit amet, bibendum sit amet mi. Vivamus ut fermentum nunc, quis venenatis mauris. Duis non sagittis dolor. In bibendum feugiat ex sit amet luctus. Vivamus imperdiet egestas mauris, sit amet eleifend sem. Nullam elementum lacus eleifend dapibus maximus. Integer a mi nisi. Integer non massa dictum lectus fringilla malesuada. Cras pellentesque vitae nisl vel tincidunt. Pellentesque a tempus libero, non scelerisque turpis. Nulla sit amet felis et nisl accumsan convallis sed rhoncus dolor. Nam diam velit, vehicula at feugiat nec, ullamcorper vel diam.", style: style, requiresAffirmativeConsent: affirmativeConsent, continueLabel: "I'm Sure", cancelLabel: "Nope!")
             
         }
         
         static func multipart(affirmativeConsent: Bool, navigationPosition: Agreement.NavigationPosition) -> Agreement {
             
-            let style = Agreement.Style.multipart(affirmativeConsent: affirmativeConsent, navigationPosition: navigationPosition)
+            let style = Agreement.Style.multipart(navigationPosition: navigationPosition)
             
             return Agreement(title: "Terms & Conditions", sections: [
                 .text("Section 1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a lorem nec dui malesuada fringilla ac nec nulla. Fusce iaculis tempus elementum. Maecenas facilisis dui varius urna tincidunt, ut lobortis mi interdum. Integer dapibus lobortis ligula id commodo. Vestibulum varius in mi sit amet cursus."),
@@ -38,7 +38,7 @@ extension Agreement {
                 .link("C. Even Another Website", URL(string: "https://www.apple.com/")),
                 .text("Section 4", "Sed placerat nibh id metus blandit varius. Vivamus et maximus mi. Nulla facilisi. Nullam in justo sed lacus condimentum ultrices sed vitae sem. Cras vestibulum ipsum et posuere interdum. Nunc libero leo, convallis et aliquam at, volutpat quis tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis et nibh leo. Integer rhoncus eget dolor sit amet congue. In pretium lorem quis diam eleifend, et varius massa dapibus. Mauris varius neque nunc, eget aliquam eros venenatis vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas imperdiet purus id nisi maximus, ac volutpat felis pharetra. Morbi ut fringilla ante. Nulla accumsan, elit ac molestie tristique, metus dolor sollicitudin nibh, non molestie est eros at diam. Maecenas a nisi ut ligula condimentum blandit ut eu est."),
                 .callToAction("Send via Email")
-                ], style: style, continueLabel: "I'm Sure", cancelLabel: "Cancel")
+                ], style: style, requiresAffirmativeConsent: affirmativeConsent, continueLabel: "I'm Sure", cancelLabel: "Cancel")
         }
     }
     

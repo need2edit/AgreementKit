@@ -59,23 +59,6 @@ extension AgreementProvider where Self: UIViewController {
     ///   - continueCallback: action to perform is the user accepts the agreement
     ///   - cancelCallback: action to perform is the user does not accept the agreement
     /// - Returns: UIAlertController with 2 actions, one to continue, one to cancel
-    fileprivate func alertViewController(andContinue continueCallback: @escaping () -> (), orCancel cancelCallback: @escaping () -> ()) -> UIAlertController {
-        
-        let alert = UIAlertController(title: agreementTitle, message: agreementDescription, preferredStyle: .alert)
-        
-        let agree = UIAlertAction(title: agreementToPresent.continueLabel, style: .default, handler: { action in
-            continueCallback()
-        })
-        
-        let cancel = UIAlertAction(title: agreementToPresent.cancelLabel, style: .cancel, handler: { action in
-            cancelCallback()
-        })
-        
-        alert.addAction(agree)
-        alert.addAction(cancel)
-        
-        return alert
-    }
     
     public func requireConsent(andContinue continueCallback: @escaping () -> ()) {
         requireConsent(andContinue: continueCallback, orCancel: {
@@ -94,8 +77,7 @@ extension AgreementProvider where Self: UIViewController {
             
         case .alert:
             
-            let alert = alertViewController(andContinue: continueCallback, orCancel: cancelCallback)
-            
+            let alert = UIAlertController(self, presenter: self, continueCallback: continueCallback, orCancel: cancelCallback)
             DispatchQueue.main.async { self.present(alert) }
             
         case .multipart:

@@ -44,9 +44,9 @@ extension ViewController {
         case 0:
             return .alert
         case 1:
-            return .textbox(affirmativeConsent: affirmativeConsentRequired, navigationPosition: navigationPosition)
+            return .textbox(navigationPosition: navigationPosition)
         case 2:
-            return .multipart(affirmativeConsent: affirmativeConsentRequired, navigationPosition: navigationPosition)
+            return .multipart(navigationPosition: navigationPosition)
         default: return .alert
         }
     }
@@ -78,7 +78,7 @@ extension ViewController: AgreementProvider {
     var agreementToPresent: Agreement! {
         switch agreementStyle {
         case .alert:
-            return Agreement.Example.alert()
+            return Agreement.Example.alert(affirmativeConsent: affirmativeConsentRequired)
         case .multipart:
             return Agreement.Example.multipart(affirmativeConsent: affirmativeConsentRequired, navigationPosition: navigationPosition)
         case .textbox:
@@ -87,8 +87,10 @@ extension ViewController: AgreementProvider {
     }
     
     var affirmativeConsentAgreement: Agreement? {
+        
         let body = "This is called \"Affirmative Consent\", or a secondary agreement that you're requiring because you really want people to be sure."
-        return Agreement(title: "Are you sure you're sure?", message: body, style: .alert, continueLabel: "Continue", cancelLabel: "Nope!")
+        
+        return Agreement(title: "Are you sure you're sure?", message: body, style: .alert, requiresAffirmativeConsent: affirmativeConsentRequired, continueLabel: "Continue", cancelLabel: "Nope!")
     }
     
 }

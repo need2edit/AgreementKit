@@ -73,6 +73,8 @@ public class AgreementViewController: UIViewController, AgreementViewManager {
     
     func askForAffirmativeConsent(andContinue continueCallback: @escaping Callback, orCancel cancelCallback: @escaping Callback) {
         
+        
+        
         let alert = UIAlertController(title: affirmativeConsentAgreement?.title, message: affirmativeConsentAgreement?.message, preferredStyle: .alert)
         
         let confirm = UIAlertAction(title: affirmativeConsentAgreement?.continueLabel, style: .default)  { action in
@@ -89,7 +91,6 @@ public class AgreementViewController: UIViewController, AgreementViewManager {
         alert.addAction(cancel)
         
         present(alert, animated: true, completion: nil)
-        
         
     }
     

@@ -19,21 +19,13 @@ public struct Agreement {
     
     let continueLabel: String
     let cancelLabel: String
-    
-}
 
-
-// MARK: - Enumerations
-extension Agreement {
-    
-    /// Positions buttons in the navigation item or in the toolbar
+    /// Wether or not the user will be required to provide an additional confirmation after agreeing once.
     ///
-    /// - top: places controls in the navigation bar
-    /// - bottom: places controls in the toolbar
-    public enum NavigationPosition {
-        case top
-        case bottom
-    }
+    /// Example: When installing an iOS update, the terms and conditions agreement appears. After agreeing to install, an alert appears asking the user to confirm that they indeed agree to the terms and conditions previously presented. This double confirmation is known as affirmative consent.
+    ///
+    /// -warning: If you require affirmative consent but do not provide an additional agreement in the `AgreementProvider` delegate, an exception will be thrown.
+    let requiresAffirmativeConsent: Bool
     
     /// Agreement Sections are have 3 distinct types:
     ///
@@ -67,6 +59,22 @@ extension Agreement {
             }
         }
     }
+
+    
+}
+
+
+// MARK: - Enumerations
+extension Agreement {
+    
+    /// Positions buttons in the navigation item or in the toolbar
+    ///
+    /// - top: places controls in the navigation bar
+    /// - bottom: places controls in the toolbar
+    public enum NavigationPosition {
+        case top
+        case bottom
+    }
     
     /// Controls the type of agreement UI that will appear for the user. This falls into one of three categories:
     ///
@@ -75,8 +83,8 @@ extension Agreement {
     /// - multipart: A form with sections. Supports text, links, and calls to action.
     public enum Style {
         case alert
-        case textbox(affirmativeConsent: Bool, navigationPosition: NavigationPosition)
-        case multipart(affirmativeConsent: Bool, navigationPosition: NavigationPosition)
+        case textbox(navigationPosition: NavigationPosition)
+        case multipart(navigationPosition: NavigationPosition)
     }
     
 }
@@ -93,10 +101,11 @@ extension Agreement {
     ///   - style: The overall style of the agreement. `Alert`, `Textbox`, `Multipart` are available.
     ///   - continueLabel: label for the agree button
     ///   - cancelLabel: label for the cancel button
-    public init(title: String, message: String?, style: Style = .alert, continueLabel: String = "Agree", cancelLabel: String = "Cancel") {
+    public init(title: String, message: String?, style: Style = .alert, requiresAffirmativeConsent: Bool, continueLabel: String = "Agree", cancelLabel: String = "Cancel") {
         self.style = style
         self.title = title
         self.message = message
+        self.requiresAffirmativeConsent = requiresAffirmativeConsent
         self.continueLabel = continueLabel
         self.cancelLabel = cancelLabel
         self.sections = [.text(title, message)]
@@ -111,10 +120,11 @@ extension Agreement {
     ///   - style: the overall style for the agreement
     ///   - continueLabel: the label for the agree button
     ///   - cancelLabel: label for the cancel button
-    public init(title: String, sections: [Section], style: Style = .alert, continueLabel: String = "Agree", cancelLabel: String = "Cancel") {
+    public init(title: String, sections: [Section], style: Style = .alert, requiresAffirmativeConsent: Bool, continueLabel: String = "Agree", cancelLabel: String = "Cancel") {
         self.style = style
         self.title = title
         self.message = nil
+        self.requiresAffirmativeConsent = requiresAffirmativeConsent
         self.continueLabel = continueLabel
         self.cancelLabel = cancelLabel
         self.sections = sections
@@ -123,18 +133,10 @@ extension Agreement {
 
 extension Agreement {
     
-    var requiresAffirmativeConsent: Bool {
-        switch style {
-        case .alert: return false
-        case .multipart(affirmativeConsent: let affirmative, navigationPosition: _), .textbox(affirmativeConsent: let affirmative, navigationPosition: _):
-            return affirmative
-        }
-    }
-    
     var navigationPosition: NavigationPosition {
         switch style {
         case .alert: return .bottom
-        case .multipart(affirmativeConsent: _, navigationPosition: let position), .textbox(affirmativeConsent: _, navigationPosition: let position):
+        case .multipart(navigationPosition: let position), .textbox(navigationPosition: let position):
             return position
         }
     }
