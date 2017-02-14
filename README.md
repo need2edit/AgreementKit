@@ -36,8 +36,8 @@ Carthage is a decentralized dependency manager that builds your dependencies and
 
 You can install Carthage with Homebrew using the following command:
 
-$ brew update
-$ brew install carthage
+    $ brew update
+    $ brew install carthage
 
 To integrate AgreementKit into your Xcode project using Carthage, specify it in your Cartfile:
 github "need2edit/AgreementKit"
