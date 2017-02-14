@@ -10,6 +10,8 @@ import UIKit
 
 extension Selector { }
 
+
+/// Shows the `Agreement` as a plain TextView filling the whole screen.
 public class TextboxViewController: AgreementViewController {
     
     lazy var textView: UITextView = {

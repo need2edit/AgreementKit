@@ -33,7 +33,7 @@ extension UIAlertController {
         
         self.init(with: agreement, andContinue: {
         
-            guard let secondaryAgreement = agreementProvider.affirmativeConsentAgreement, agreement.requiresAffirmativeConsent else {
+            guard let secondaryAgreement = agreementProvider.secondaryAgreementToPresent, agreement.requiresAffirmativeConsent else {
                 return continueCallback()
             }
             

@@ -9,6 +9,18 @@
 import UIKit
 
 
+/// Allows enums to be used instead of strings for safer segue management.
+///
+/// Example:
+/// ```
+/// enum SegueIdentifier: String {
+///    case showDetails
+///    case showLogin
+/// }
+///
+/// // usage on UIViewController
+/// vc.performSegue(segueIdentifier: .showDetails)
+///
 public protocol SegueHandlerType {
      associatedtype SegueIdentifier: RawRepresentable
 }
@@ -23,6 +35,10 @@ extension SegueHandlerType where Self: UIViewController, SegueIdentifier.RawValu
         return segueIdentifier
     }
 
+    
+    /// Overloads standard perform performSegue(:) with safer SegueIdentifier
+    ///
+    /// - Parameter segueIdentifier: the segue you want to perform
     public func performSegue(segueIdentifier: SegueIdentifier) {
         performSegue(withIdentifier: segueIdentifier.rawValue, sender: nil)
     }

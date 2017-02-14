@@ -10,6 +10,8 @@ import UIKit
 import MessageUI
 import SafariServices
 
+
+/// Shows the agreement in styled sections.
 public class MultiPartAgreementViewController: AgreementViewController {
 
     enum RowStyle {
