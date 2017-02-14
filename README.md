@@ -29,6 +29,10 @@ If you want a view controller to present an agreement, setup is easy:
 
 # Getting Started
 
+# Documentation
+
+Check out [AgreementKit's documentation](https://htmlpreview.github.io/?https://github.com/need2edit/AgreementKit/blob/master/docs/index.html) courtesy of [Jazzy](https://github.com/realm/jazzy).
+
 # Installation
 ## Carthage
 
