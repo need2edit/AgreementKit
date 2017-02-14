@@ -40,7 +40,9 @@ You can install Carthage with Homebrew using the following command:
     $ brew install carthage
 
 To integrate AgreementKit into your Xcode project using Carthage, specify it in your Cartfile:
-github "need2edit/AgreementKit"
+   
+    github "need2edit/AgreementKit"
+
 Run carthage update to build the framework and drag the built AgreementKit.framework into your Xcode project.
 
 # Working with Agreements
