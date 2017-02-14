@@ -28,9 +28,20 @@ If you want a view controller to present an agreement, setup is easy:
     ```
 
 # Getting Started
+
+# Installation
 ## Carthage
 
-**AgreementKit** supports Carthage. CocoaPods is on the TODO list. 
+Carthage is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with Homebrew using the following command:
+
+$ brew update
+$ brew install carthage
+
+To integrate AgreementKit into your Xcode project using Carthage, specify it in your Cartfile:
+github "need2edit/AgreementKit"
+Run carthage update to build the framework and drag the built AgreementKit.framework into your Xcode project.
 
 # Working with Agreements
 ## Alert

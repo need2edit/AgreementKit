@@ -9,19 +9,30 @@
 import Foundation
 import UIKit
 
+
+/// Objects conforming to `AffirmativeConsentProvider` provide an optional agreement which manifests as an additional level of consent. For example, when a terms and conditions screen appears, you may want the user to consent a second time.
 public protocol AffirmativeConsentProvider {
     
     /// The agreement for the secondary notice that will appear. This appears as an additional alert on top of the first agreement.
-    var affirmativeConsentAgreement: Agreement? { get }
+    var secondaryAgreementToPresent: Agreement? { get }
 }
 
+/// Objects conforming to `AgreementProvider` provide two agreements:
+///
+/// * agreementToPresent (required) - The primary agreement the user must consent to.
+/// * secondaryAgreementToPresent (optional) - An optional secondary agreement for confirming consent.
+///
+/// - seealso: `AffirmativeConsentProvider`
 public protocol AgreementProvider: AffirmativeConsentProvider {
-    /// Provides the agreeement
+    
+    /// the primary agreement to present, shown as either `alert`, `textbox`, or `multipart`.
     var agreementToPresent: Agreement! { get }
 }
 
 extension AffirmativeConsentProvider {
-    var consentRequired: Bool { return affirmativeConsentAgreement != nil}
+    
+    /// wether or not the secondary alert should be shown
+    var consentRequired: Bool { return secondaryAgreementToPresent != nil}
 }
 
 extension AgreementProvider {

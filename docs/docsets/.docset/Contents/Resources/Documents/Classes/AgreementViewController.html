@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AgreementViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/AgreementViewController" class="dashAnchor"></a>
+    <a title="AgreementViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (59% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AgreementViewController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AgreementViewController.html">AgreementViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MultiPartAgreementViewController.html">MultiPartAgreementViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextboxViewController.html">TextboxViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AffirmativeConsentProvider.html">AffirmativeConsentProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AgreementProvider.html">AgreementProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AgreementViewControllerDelegate.html">AgreementViewControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AgreementViewManager.html">AgreementViewManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SegueHandlerType.html">SegueHandlerType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Agreement.html">Agreement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Agreement/Section.html">– Section</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Agreement/NavigationPosition.html">– NavigationPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Agreement/Style.html">– Style</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AgreementViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AgreementViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/AgreementViewManager.html">AgreementViewManager</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>This view controller is shown modally and can be created with a custom agreement.</p>
+
+<p>This approach mimics the iOS software update workflow:</p>
+
+<ol>
+<li>The iOS Terms and Conditions view first pops up showing the long form agreement.</li>
+<li>An alert is used for secondary confirmation.</li>
+</ol>
+
+<p><a href='#conform-to-code-agreementprovider-code' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='conform-to-code-agreementprovider-code'>Conform to <code><a href="../Protocols/AgreementProvider.html">AgreementProvider</a></code></h1></p>
+
+<p><code>AgreementViewController</code> will change it&rsquo;s style based on the agreement provided in your presenting view controller.</p>
+
+<p>If you would like to present an <code>AgreementViewController</code> from any view controller easily, have your view controller conform to the <code><a href="../Protocols/AgreementProvider.html">AgreementProvider</a></code> protocol.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12AgreementKit23AgreementViewController8delegateGSqPS_31AgreementViewControllerDelegate__"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12AgreementKit23AgreementViewController8delegateGSqPS_31AgreementViewControllerDelegate__">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AgreementViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/AgreementViewManager.html">AgreementViewManager</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12AgreementKit23AgreementViewControllercFT9agreementVS_9Agreement18secondaryAgreementGSqS1__16continueCallbackGSqFT_T__14cancelCallbackGSqFT_T___S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(agreement:secondaryAgreement:continueCallback:cancelCallback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12AgreementKit23AgreementViewControllercFT9agreementVS_9Agreement18secondaryAgreementGSqS1__16continueCallbackGSqFT_T__14cancelCallbackGSqFT_T___S0_">init(agreement:secondaryAgreement:continueCallback:cancelCallback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Designated initializer using an Agreement.</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>agreement: the primary agreement, shown as either <code>alert</code>, <code>textbox</code>, or <code>multipart</code>.</li>
+<li>affirmativeAgreement: an optional secondary agreement that is shown when the user agrees to the primary agreement.</li>
+<li>continueCallback: the action to perform when all agreements are agreed to.</li>
+<li>cancelCallback: the action to perform when the primary agreement is declined.</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">agreement</span><span class="p">:</span> <span class="kt"><a href="../Structs/Agreement.html">Agreement</a></span><span class="p">,</span> <span class="nv">secondaryAgreement</span><span class="p">:</span> <span class="kt"><a href="../Structs/Agreement.html">Agreement</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">continueCallback</span><span class="p">:</span> <span class="kt">Callback</span><span class="p">?,</span> <span class="nv">cancelCallback</span><span class="p">:</span> <span class="kt">Callback</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>agreement</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the primary agreement, shown as either <code>alert</code>, <code>textbox</code>, or <code>multipart</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>affirmativeAgreement</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an optional secondary agreement that is shown when the user agrees to the primary agreement.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>continueCallback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the action to perform when all agreements are agreed to.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cancelCallback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the action to perform when the primary agreement is declined.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12AgreementKit23AgreementViewControllercFT5coderCSo7NSCoder_GSqS0__"></a>
+                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12AgreementKit23AgreementViewControllercFT5coderCSo7NSCoder_GSqS0__">init(coder:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AgreementViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/AgreementViewManager.html">AgreementViewManager</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12AgreementKit23AgreementViewController18agreementToPresentGSQVS_9Agreement_"></a>
+                    <a name="//apple_ref/swift/Property/agreementToPresent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12AgreementKit23AgreementViewController18agreementToPresentGSQVS_9Agreement_">agreementToPresent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>the primary agreement, shown as either <code>alert</code>, <code>textbox</code>, or <code>multipart</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">agreementToPresent</span><span class="p">:</span> <span class="kt"><a href="../Structs/Agreement.html">Agreement</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12AgreementKit23AgreementViewController27secondaryAgreementToPresentGSqVS_9Agreement_"></a>
+                    <a name="//apple_ref/swift/Property/secondaryAgreementToPresent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12AgreementKit23AgreementViewController27secondaryAgreementToPresentGSqVS_9Agreement_">secondaryAgreementToPresent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>the optional secondary agreement that is shown when the user agrees to the primary agreement.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">secondaryAgreementToPresent</span><span class="p">:</span> <span class="kt"><a href="../Structs/Agreement.html">Agreement</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12AgreementKit23AgreementViewController16continueCallbackGSqFT_T__"></a>
+                    <a name="//apple_ref/swift/Property/continueCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12AgreementKit23AgreementViewController16continueCallbackGSqFT_T__">continueCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>the action to perform when all agreements are agreed to.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">continueCallback</span><span class="p">:</span> <span class="kt">Callback</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12AgreementKit23AgreementViewController14cancelCallbackGSqFT_T__"></a>
+                    <a name="//apple_ref/swift/Property/cancelCallback" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12AgreementKit23AgreementViewController14cancelCallbackGSqFT_T__">cancelCallback</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>the action to perform when the primary agreement is declined</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cancelCallback</span><span class="p">:</span> <span class="kt">Callback</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12AgreementKit23AgreementViewController11viewDidLoadFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12AgreementKit23AgreementViewController11viewDidLoadFT_T_">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AgreementViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/AgreementViewManager.html">AgreementViewManager</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12AgreementKit23AgreementViewController21mailComposeControllerFTCSo27MFMailComposeViewController13didFinishWithOSC19MFMailComposeResult5errorGSqPs5Error___T_"></a>
+                    <a name="//apple_ref/swift/Method/mailComposeController(_:didFinishWith:error:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12AgreementKit23AgreementViewController21mailComposeControllerFTCSo27MFMailComposeViewController13didFinishWithOSC19MFMailComposeResult5errorGSqPs5Error___T_">mailComposeController(_:didFinishWith:error:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AgreementViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/AgreementViewManager.html">AgreementViewManager</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-02-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

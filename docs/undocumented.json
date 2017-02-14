@@ -1,0 +1,180 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": null,
+      "symbol": "Agreement",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": null,
+      "symbol": "Agreement",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": 11,
+      "symbol": "Agreement",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": 36,
+      "symbol": "Agreement.Section.text",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": 37,
+      "symbol": "Agreement.Section.link",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": 38,
+      "symbol": "Agreement.Section.callToAction",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": 40,
+      "symbol": "Agreement.Section.attributedText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": 75,
+      "symbol": "Agreement.NavigationPosition.top",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": 76,
+      "symbol": "Agreement.NavigationPosition.bottom",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": 85,
+      "symbol": "Agreement.Style.alert",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": 86,
+      "symbol": "Agreement.Style.textbox",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/Agreement.swift",
+      "line": 87,
+      "symbol": "Agreement.Style.multipart",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/AgreementViewController.swift",
+      "line": 45,
+      "symbol": "AgreementViewManager.continueCallback",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/AgreementViewController.swift",
+      "line": 46,
+      "symbol": "AgreementViewManager.cancelCallback",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/AgreementViewController.swift",
+      "line": 68,
+      "symbol": "AgreementViewController.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/AgreementViewController.swift",
+      "line": 101,
+      "symbol": "AgreementViewController.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/AgreementViewController.swift",
+      "line": 117,
+      "symbol": "AgreementViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/AgreementViewController.swift",
+      "line": 217,
+      "symbol": "AgreementViewController.mailComposeController(_:didFinishWith:error:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/MultiPartAgreementViewController.swift",
+      "line": 35,
+      "symbol": "MultiPartAgreementViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/MultiPartAgreementViewController.swift",
+      "line": 89,
+      "symbol": "MultiPartAgreementViewController.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/MultiPartAgreementViewController.swift",
+      "line": 93,
+      "symbol": "MultiPartAgreementViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/MultiPartAgreementViewController.swift",
+      "line": 97,
+      "symbol": "MultiPartAgreementViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/MultiPartAgreementViewController.swift",
+      "line": 110,
+      "symbol": "MultiPartAgreementViewController.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/AgreementKit/TextboxViewController.swift",
+      "line": 26,
+      "symbol": "TextboxViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit/DemoAppiOS/SegueHandlerType.swift",
+      "line": 31,
+      "symbol": "SegueHandlerType.segueIdentifierForSegue(segue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/jyo/Library/Mobile Documents/com~apple~CloudDocs/Swift/Community Contributions/AgreementKit"
+}

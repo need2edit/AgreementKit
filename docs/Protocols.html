@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Protocols  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Protocols  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (59% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Protocols  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/AgreementViewController.html">AgreementViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MultiPartAgreementViewController.html">MultiPartAgreementViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TextboxViewController.html">TextboxViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/UITableView.html">UITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/AffirmativeConsentProvider.html">AffirmativeConsentProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/AgreementProvider.html">AgreementProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/AgreementViewControllerDelegate.html">AgreementViewControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/AgreementViewManager.html">AgreementViewManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/SegueHandlerType.html">SegueHandlerType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Agreement.html">Agreement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Agreement/Section.html">– Section</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Agreement/NavigationPosition.html">– NavigationPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Agreement/Style.html">– Style</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Protocols</h1>
+            <p>The following protocols are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P12AgreementKit26AffirmativeConsentProvider"></a>
+                    <a name="//apple_ref/swift/Protocol/AffirmativeConsentProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P12AgreementKit26AffirmativeConsentProvider">AffirmativeConsentProvider</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Objects conforming to <code>AffirmativeConsentProvider</code> provide an optional agreement which manifests as an additional level of consent. For example, when a terms and conditions screen appears, you may want the user to consent a second time.</p>
+
+                        <a href="Protocols/AffirmativeConsentProvider.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AffirmativeConsentProvider</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P12AgreementKit17AgreementProvider"></a>
+                    <a name="//apple_ref/swift/Protocol/AgreementProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P12AgreementKit17AgreementProvider">AgreementProvider</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Objects conforming to <code>AgreementProvider</code> provide two agreements:</p>
+
+<p><li>agreementToPresent (required) - The primary agreement the user must consent to.</li>
+<li><p>secondaryAgreementToPresent (optional) - An optional secondary agreement for confirming consent.</p></li>
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    <p><code><a href="Protocols/AffirmativeConsentProvider.html">AffirmativeConsentProvider</a></code></p></p>
+
+<p></div></p>
+
+                        <a href="Protocols/AgreementProvider.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AgreementProvider</span><span class="p">:</span> <span class="kt"><a href="Protocols/AffirmativeConsentProvider.html">AffirmativeConsentProvider</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P12AgreementKit16SegueHandlerType"></a>
+                    <a name="//apple_ref/swift/Protocol/SegueHandlerType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P12AgreementKit16SegueHandlerType">SegueHandlerType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allows enums to be used instead of strings for safer segue management.</p>
+
+<p>Example:
+&ldquo;`
+enum SegueIdentifier: String {
+   case showDetails
+   case showLogin
+}</p>
+
+<p>// usage on UIViewController
+vc.performSegue(segueIdentifier: .showDetails)</p>
+
+                        <a href="Protocols/SegueHandlerType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SegueHandlerType</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P12AgreementKit31AgreementViewControllerDelegate"></a>
+                    <a name="//apple_ref/swift/Protocol/AgreementViewControllerDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P12AgreementKit31AgreementViewControllerDelegate">AgreementViewControllerDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegate for managing when consent is shown by the Agreement View Controller.</p>
+
+<p>Useful for logging additional activity or dismissing the controller.</p>
+
+                        <a href="Protocols/AgreementViewControllerDelegate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AgreementViewControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P12AgreementKit20AgreementViewManager"></a>
+                    <a name="//apple_ref/swift/Protocol/AgreementViewManager" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P12AgreementKit20AgreementViewManager">AgreementViewManager</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A generic protocol for enforcing <code>continue</code> and <code>cancel</code> workflows with agreements.</p>
+
+                        <a href="Protocols/AgreementViewManager.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AgreementViewManager</span><span class="p">:</span> <span class="kt"><a href="Protocols/AgreementProvider.html">AgreementProvider</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2017-02-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -86,7 +86,7 @@ extension ViewController: AgreementProvider {
         }
     }
     
-    var affirmativeConsentAgreement: Agreement? {
+    var secondaryAgreementToPresent: Agreement? {
         
         let body = "This is called \"Affirmative Consent\", or a secondary agreement that you're requiring because you really want people to be sure."
         
